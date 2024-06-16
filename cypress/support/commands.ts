@@ -1,4 +1,7 @@
 /// <reference types="cypress" />
+
+import cypress from "cypress"
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -37,11 +40,15 @@
 // }
 
 declare namespace Cypress {
-    interface Chainable {
-      getByData(dataTestAttribute: string): Chainable<JQuery<HTMLElement>>
-    }
+  interface Chainable {
+    getByData(dataTestAttribute: string): Chainable<JQuery<HTMLElement>>
   }
-  
-  Cypress.Commands.add("getByData", (selector) => {
-    return cy.get(`[data-test=${selector}]`)
-  })
+}
+
+// Cypress.Commands.add("getByData", (selector) => {
+//   return cy.get(`[data-test=${selector}]`)
+// })
+
+cypress.command.add("getBySel", (selector)=>{
+  return cy.get(`[data-test=${selecyor}]`)
+})

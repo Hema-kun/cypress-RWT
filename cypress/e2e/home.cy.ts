@@ -19,32 +19,26 @@ describe("home page", () => {
     })
   })
 
-  //assert course-0 page
+  //assert course section
   context("Course section", ()=>{
+    //assert course-0
     it("Course: Testing your first Next.js Application", ()=>{
       cy.get("[data-test='course-0']").find("a").contains("Get started").click()
       //assert the correct url/pathname
       // cy.url().should("include", "/testing-your-first-applicatioon")
       cy.location("pathname").should("equal", "/testing-your-first-application")
     })
-  })
 
-  //assert course-1 page
-  context("Course section", ()=>{
+    //assert course-1 page
     it("Course: Testing Foundations", ()=>{
       cy.get("[data-test='course-1']").find("a").contains("Get started").click()
       cy.location("pathname").should("equal", "/testing-foundations")
     })
-  })
 
-  //assert course-2 page
-  context("Course section", ()=>{
+    //assert course-2 page
     it("Course: Cypress Fundamentals", ()=>{
       cy.get("[data-test='course-2']").find("a").contains("Get started").click()
       cy.location("pathname").should("equal", "/cypress-fundamentals")
     })
   })
-
-
-
 })

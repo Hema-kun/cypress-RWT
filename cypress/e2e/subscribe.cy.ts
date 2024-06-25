@@ -8,9 +8,9 @@ describe("Newsletter Subscribe Form",()=>{
 
     //assert user can subscribe by input email
     it("allows user to subscribe to the email list",()=>{
-        cy.get("[data-test='email-input']").type("joe@gmail.com")
+        cy.get("[data-test='email-input']").type("tom@aol.com")
         cy.get("[data-test='submit-button']").click()
-        cy.get("[data-test='success-message']").should("exist").contains("joe@gmail.com")
+        cy.get("[data-test='success-message']").should('exist').contains("tom@aol.com")
     })
 
     //assert user can't subscribe by input wrong email
